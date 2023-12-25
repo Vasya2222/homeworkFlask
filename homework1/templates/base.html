@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %} simplestyle_1 {% endblock %}</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="static/style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="{{ url_for('home') }}">Магазин одежды</a></h1>
+          <h2>Добро пожаловать в интернет магазин!</h2></h2ч></h2>
+        </div>
+      </div>
+      {% block nav %}
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="{{ url_for('home') }}">Главная страница</a></li>
+          <li><a href="{{ url_for('clothes') }}">Одежда</a></li>
+          <li><a href="{{ url_for('shoes') }}">Обувь</a></li>
+          <li><a href="{{ url_for('hats') }}">Головной убор</a></li>
+          <li><a href="{{ url_for('jacket') }}">Куртка</a></li>
+        </ul>
+      </div>
+      {% endblock %}
+    </div>
+    {% block content %}
+    <div id="content_header">
+          Добро пожаловать в интернет магазин одежды! <br>
+      Здесь продаются разные товары из категорий: одежда, куртки, головные уборы и обувь.
+      <br>
+      Надеюсь Вам понравится наши товары.
+
+    </div>
+    {% endblock %}
+    </div>
+  {% block footer %}
+    <div id="content_footer">
+
+    </div>
+  {% endblock %}
+    <div id="footer">
+      Copyright &copy; simplestyle_1
+    </div>
+  </div>
+</body>
+</html>
